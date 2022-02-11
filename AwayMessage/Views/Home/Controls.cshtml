@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@section scripts{
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script type="text/javascript" src="~/js/flipclock.min.js"></script>
+    <script type="text/javascript" src="~/js/beback-admin.js"></script>
+
+}
+
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Away Message Controls</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-md-10">
+            <button id="btn15" class="btn btn-default">15 Minutes</button>
+            <button id="btn30" class="btn btn-default">30 Minutes</button>
+            <button id="btn60" class="btn btn-default">60 Minutes</button>
+            <br />
+            <input id="txtCustom" class="input-sm" placeholder="seconds" />
+            <button id="btnCustom" class="btn btn-default">Custom</button>
+            <br />
+            <button id="btnPageReload" class="btn btn-default">Reload Page</button>
+            <br />
+            <input id="txtTitle" class="btn btn-default" placeholder="Title" />
+            <button id="btnTitle" class="btn btn-default">Submit</button>
+            <br />
+            <input id="txtSubtitle" class="btn btn-default" placeholder="SubTitle" />
+            <button id="btnSubtitle" class="btn btn-default">Submit</button>
+            <br />
+            <input id="txtMessage" class="btn btn-default" placeholder="Message" />
+            <button id="btnMessage" class="btn btn-default">Submit</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+
+

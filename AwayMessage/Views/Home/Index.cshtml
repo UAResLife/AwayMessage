@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "AwayMessage";
+}
+
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script type="text/javascript" src="~/js/flipclock.min.js"></script>
+    <script type="text/javascript" src="~/js/beback-client.js"></script>
+
+}
+
+
+<div class="text-center">
+    <h1 class="display-4" id="pageTitle"></h1>
+    <h2 class="display-4" id="pageSubtitle"></h2>
+    <p id="message"></p>
+    <br /><br />
+    <div class="" id="clockWrapper">
+        <div class="clock align-content-center" style="margin:0em;"></div>
+    </div>
+</div>
+
+
+
