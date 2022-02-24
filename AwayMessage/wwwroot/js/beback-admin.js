@@ -1,17 +1,16 @@
 ﻿(function () {
     "use strict";
-    var connection = new signalR.HubConnectionBuilder().withUrl("/serverHub").build();
+    var connection = new signalR.HubConnectionBuilder().withUrl("/serverHub?client=0").build();
 
-    var clock;
-
-    //var connection = $.hubConnection(),
-    //    hub = connection.createHubProxy('serverHub');
-
-    connection.start().then(function () { }).catch(function (err) {
+    connection.start().then(function () {}).catch(function (err) {
         return console.error(err.toString());
     });
 
-
+    connection.on('ChangeValues', function (txt) {
+        $('#txtTitle').val(txt.title);
+        $('#txtSubtitle').val(txt.subtitle);
+        $('#txtMessage').val(txt.message);
+    });
 
     $('#btn15').click(function (e) {
         connection.invoke('StartTimer', 900).catch(function (err) {
@@ -51,20 +50,8 @@
         });
     });
 
-    $('#btnTitle').click(function () {
-        connection.invoke('ChangeTitle', $('#txtTitle').val()).catch(function (err) {
-            return console.error(err.toString());
-        });
-    });
-
-    $('#btnSubtitle').click(function () {
-        connection.invoke('ChangeSubtitle', $('#txtSubtitle').val()).catch(function (err) {
-            return console.error(err.toString());
-        });
-    });
-
-    $('#btnMessage').click(function () {
-        connection.invoke('ChangeMessage', $('#txtMessage').val()).catch(function (err) {
+    $('#btnSubmit').click(function () {
+        connection.invoke('ChangeValues', $('#txtTitle').val(), $('#txtSubtitle').val(), $('#txtMessage').val()).catch(function (err) {
             return console.error(err.toString());
         });
     });
