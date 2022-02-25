@@ -4,7 +4,7 @@
 @section scripts{
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
     <script type="text/javascript" src="~/js/flipclock.min.js"></script>
-    <script type="text/javascript" src="~/js/beback-admin.js"></script>
+    <script type="text/javascript" src="~/js/am-controls.js"></script>
 
 }
 
@@ -20,15 +20,14 @@
             </div>
         </div>
         <br />
-        <div class="row">
-            <div class="col">
-                <div class="input-group mb-3">
-                  <input id="txtCustom" type="number" class="form-control" placeholder="seconds" aria-label="Custom time in seconds" aria-describedby="btnCustom"/>
-                  <button class="btn btn-outline-secondary" type="button" id="btnCustom">Custom Time</button>
-                </div>
+        <div class="mb-3 row">
+            <label for="txtCustom" class="col-sm-3 col-form-label">Timer's seconds</label>
+            <div class="col-sm-9">
+                <input id="txtCustom" type="number" class="form-control" placeholder="Seconds"></input>
             </div>
-            <div class="col-4"></div>
         </div>
+
+
         <hr />
         <h3>Text/HTML</h3><br />
         <div class="mb-3 row">
