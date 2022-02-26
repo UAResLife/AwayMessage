@@ -2,10 +2,6 @@
     "use strict";
     var connection = new signalR.HubConnectionBuilder().withUrl("/serverHub?client=1").build();
 
-    connection.start().then(function () {}).catch(function (err) {
-        return console.error(err.toString());
-    });
-        
     connection.on('UpdateScreen', function (msg) {
         $('#pageTitle').html(msg.title);
         $('#pageSubtitle').html(msg.subtitle);
@@ -31,5 +27,9 @@
         var timertime = Math.floor(new Date(timerStartTime).getTime() / 1000);
         return timertime - now + timerSeconds;
     }
+
+    connection.start().then(function () { }).catch(function (err) {
+        return console.error(err.toString());
+    });
 
 })();

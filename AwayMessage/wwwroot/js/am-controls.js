@@ -2,14 +2,15 @@
     "use strict";
     var connection = new signalR.HubConnectionBuilder().withUrl("/serverHub?client=0").build();
 
-    connection.start().then(function () {}).catch(function (err) {
-        return console.error(err.toString());
-    });
-
     connection.on('UpdateScreen', function (msg) {
         $('#txtTitle').val(msg.title);
         $('#txtSubtitle').val(msg.subtitle);
         $('#txtMessage').val(msg.message);
+        $("#txtCustom").val(msg.timerSeconds);
+    });
+
+    connection.start().then(function () { }).catch(function (err) {
+        return console.error(err.toString());
     });
 
     $('#btn15').click(function (e) {
@@ -51,7 +52,5 @@
             return console.error(err.toString());
         });
     });
-
-
 
 })();
